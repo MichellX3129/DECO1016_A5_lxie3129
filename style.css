@@ -1,0 +1,457 @@
+html, body, .grid-container { 
+  height: 100%; 
+  margin: 0; 
+  padding:0;
+  font-family: sans-serif;
+  }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 60px 300px 302.4px 60px;
+  gap: 10px 6px;
+  grid-template-areas:
+    "NavBar NavBar NavBar NavBar"
+    "threehunderedblankets threehunderedblankets SoulKitchen SoulKitchen"
+    "Description DesText DesText DesText"
+    "Footer Footer Footer Footer";
+}
+
+NavBar { grid-area: NavBar; }
+NavBar .navi { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* absolute positoning so the nav bar won't be sticky when scroll down*/
+  position: absolute;
+  min-height: 12vh;
+  min-width: 100%;
+  background: #F3F6F4;
+}
+
+NavBar .navi .logo{
+  margin-left: 20px;
+}
+
+NavBar .navi .navlist {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+  margin: auto 20px auto 0;
+}
+
+NavBar .navi .MenuIcon {
+  margin-right: 20px;
+  display: none;
+ }
+ 
+NavBar .navi .MenuIcon .line{
+  width: 40px;
+  height: 3px;
+  margin: 5px;
+  background: #334E58;
+ }
+
+NavBar .navi .navlist li a {
+  color: #334E58;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 1s ease, 1s ease;
+}
+
+NavBar .navi .navlist :hover{
+  background-color: #4381C1;
+  color: white;
+}
+
+
+ThreeHunderedBlankets { grid-area: threehunderedblankets;  background-color: #F3F6F4;
+color: #F3F6F4;
+position: relative;
+background-image:  url(300Blankets2.png);
+
+}
+
+ThreeHunderedBlankets .image {
+  transition: 0.5 ease-in;
+  backface-visibility: hidden;
+  /*Object-fit: Cover to keep the image in the grid without distortion*/
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  
+}
+
+/*To make the image (300 blanekt and sould kitchen) responsive and not get blown out when sized down.*/
+
+.centered{
+  position: absolute;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-image: url(300Blankets.jpg);
+  background-size: 120%;
+}
+
+/*Setting of the Donate button*/
+.Donate{
+  transition: 0.5s ease-in;
+  opacity: 1;
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%
+}
+
+
+
+/*Setting of the learn more button*/
+.learnMore{
+  transition: 0.5s ease-in;
+  opacity: 1;
+  position: absolute;
+  top: 80%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+ThreeHunderedBlankets :hover {
+transition: opacity 1s ease, color 1s ease;
+ opacity: 1;
+ text-shadow: 3px 2px #4381C1;
+}
+ThreeHunderedBlankets:hover .overlay {
+  opacity: 1;
+}
+
+ThreeHunderedBlankets :hover .learnMore {
+  opacity: 1;
+}
+
+
+.text {
+  color: white;
+ font-size: 40px;
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*setting of button*/
+.btntext {
+   background-color: #FFAC81;
+  color: white;
+  font-size: 12px;
+  font-weight:bold;
+  text-transform: uppercase;
+  padding: 16px 16px;
+  border-radius: 12px;
+}
+
+.learnmorebtn{
+  background-color: #334E58;
+  color: white;
+  font-size: 12px;
+  font-weight:bold;
+  text-transform: uppercase;
+  padding: 16px 16px;
+  border-radius: 12px;
+}
+
+
+SoulKitchen { grid-area: SoulKitchen;
+  background-image: url(SoulKitchen2.png);
+  color: #F3F6F4;
+  position: relative;}
+
+
+SoulKitchen .Simage {
+  transition: 0.5 ease-in;
+  backface-visibility: hidden;
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+
+.Scentered{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.Soverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-image: url(SoulKitchen.jpg);
+  background-size: 140%;
+}
+
+
+
+/*Setting of the .Volunteer button*/
+.Volunteer{
+  transition: 0.5s ease-in;
+  opacity: 1;
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+SoulKitchen :hover {
+transition: opacity 1s ease, color 1s ease;
+ opacity: 1;
+ text-shadow: 3px 2px rgb(255, 87, 8);
+}
+SoulKitchen:hover .Soverlay {
+  opacity: 1;
+}
+
+ThreeHunderedBlankets :hover .learnMore {
+  opacity: 1;
+}
+ThreeHunderedBlankets :hover .image {
+ opacity: 1;  
+}
+
+
+Description
+{grid-area: Description;  background-color: #F3F6F4;}
+
+DesText { grid-area: DesText; background-color: #F3F6F4;
+}
+/*To make the video responsive*/
+Description .videoWrapper{
+  position: relative;
+  bottom: 0%;
+  padding-bottom: 56.25%;
+  padding-left: 5px;
+  padding-top: 50px;
+
+}
+/*property of the vido itself */
+Description .videoWrapper iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.subtitle {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
+  color: #334E58 ;
+  text-shadow: 2px 1px #4381C1;
+}
+.descrip {
+  font-size: 15px;
+  margin-top: 25px;
+  text-align: left;
+  color: #334E58;
+  margin-left: 10px;
+}
+
+/*Setting of the learn more button, have it under the description container so it will remain the grid*/
+Description .DesLearnMore{
+  transition: 0.5s ease-in;
+  opacity: 1;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*setting of button*/
+.Desbtntext {
+  border-color: #334E58;
+  color: #334E58;
+  font-size: 12px;
+  font-weight:bold;
+  text-transform: uppercase;
+  padding: 16px 16px;
+  border-width: 3px;
+  background-color: clear;
+}
+
+.DesLearnMore :hover{
+  background-color:  #334E58;
+  color: white;
+  border-color: white;
+}
+
+
+Footer { 
+  grid-area: Footer; background-color: #334E58;
+  }
+
+/*To have the footer always at the bottom and responsive*/
+.footer {
+  position: absolute;
+   bottom:0;
+   width:100%;
+   height:60px;
+}
+
+/*To make it stikcy*/
+.push {
+  height: 50px;
+}
+
+ .social{
+  padding-top: 15px;
+  float: right; 
+}
+
+.contact{
+  font-size: 10px; 
+  color: #F3F6F4;
+  float: left;
+}
+
+/* Large Mobile :480px. */
+
+@media only screen and (max-width: 480px) {
+ html, body, .grid-container { 
+  height: 100%; 
+  margin: 0; 
+  padding:0;
+  font-family: sans-serif;
+  }
+  .grid-container{
+    display:block;
+  }
+  NavBar,
+  ThreeHunderedBlankets {
+    width: 30%;
+    height: 30%;
+  }
+ ThreeHunderedBlankets .image {
+    margin-top: 25%;
+  }
+  SoulKitchen{
+    width: 30%;
+    height: 30%;
+  }
+  SoulKitchen .Simage{
+    margin-top: 25%;
+  }
+  Description{
+  width: 100%;
+  height: 100%;
+  }
+  .videoWrapper{
+    width: 100%;
+    height: 100%;
+    float: center; 
+  }
+  .subtitle{
+    font-size:2vw;
+  }
+  .descrip{
+    font-size:3vw;
+  }
+  Footer{
+    width: 100%;
+    min-height: 50px;}
+
+  .contact{
+    font-size:2vw;
+  }  
+
+.Donate{ display: block; margin:0.4em auto;
+  }
+
+  .learnMore{ display:block; margin:0.4em auto;
+}
+
+  .Volunteer{ display:block; margin:0.4em auto;
+}
+
+.DesLearnMore{ display:block; margin:0.4em auto;
+}
+/*To make the hover overlays more responsive*/
+.overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+    bottom: 30px;
+    padding: 20%;
+  }
+.Soverlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+    bottom: 30px;
+    padding: 20%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+ NavBar .navi .navlist {
+   position: absolute;
+   top: 12vh;
+   min-width: 100%;
+   background: rgba(15, 20, 35, 0.99);
+   text-align: center;
+   display: none;}
+
+   NavBar .navi .navlist li {
+     display: block;}
+
+   NavBar .navi .navlist li a {
+     display: block;
+     padding: 20px;
+     transition: color 1s ease, padding 1s ease;
+     }
+  
+   NavBar .navi .navlist li a:hover{
+     color: #b1d4e0;
+     padding-left: 30px;
+     background: rgba(177, 212, 224, 0.2);
+     }
+
+  NavBar .navi .MenuIcon{     display: block;   }
+  }
